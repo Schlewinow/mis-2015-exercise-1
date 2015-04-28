@@ -31,8 +31,9 @@ public class AnotherBrokenActivity extends Activity {
         //What happens here? What is this? It feels like this is wrong.
         //Maybe the weird programmer who wrote this forgot to do something?
 
+        // Show me what you've got!
+        System.out.println("From another broken activity: " + message);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

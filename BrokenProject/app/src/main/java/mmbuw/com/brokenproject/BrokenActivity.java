@@ -7,16 +7,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import android.view.*;
 
 public class BrokenActivity extends Activity {
 
+    /**
+     * Necessary, since used in AnotherBrokenActivity.
+     */
+    public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+
+    /**
+     * EditText that was initially not properly set (null).
+     */
     private EditText auntEdith;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broken);
-        EditText auntEdit = (EditText)findViewById(R.id.edittext);
+
+        // Fixed that line so that the proper reference is set.
+        auntEdith = (EditText)findViewById(R.id.edittext);
     }
 
 
@@ -39,15 +50,25 @@ public class BrokenActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void brokenFunction(){
+    /**
+     * Used as onClick method within user interface.
+     * @param view Necessary parameter, exception when missing.
+     */
+    public void brokenFunction(View view)
+    {
         //I was once, perhaps, possibly a functioning function
-        if (auntEdith.getText().toString().equals("Timmy")){
+        if (auntEdith.getText().toString().equals("Timmy"))
+        {
             System.out.println("Timmy fixed a bug!");
         }
 
         System.out.println("If this appears in your console, you fixed a bug.");
         Intent intent = new Intent(this,AnotherBrokenActivity.class);
         String message = "This string will be passed to the new activity";
+
+        // Message has to be added to intent.
+        intent.putExtra(EXTRA_MESSAGE, message);
+
         startActivity(intent);
     }
 }
