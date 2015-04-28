@@ -1,0 +1,7 @@
+Assignment by
+114640 René Levin
+115104 Veronika Krauss
+
+App .apk at
+\ExerciseOne\appapp-release.apk
+(Yeah, the broken project was not used as base for the second part of the exercise, except for the network code)

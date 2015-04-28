@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExerciseOne</string>
+
+    <string name="input_hint">Enter URL</string>
+    <string name="button_text">Connect</string>
+    <string name="button_text_2">Web view</string>
+    <string name="action_settings">Settings</string>
+</resources>
